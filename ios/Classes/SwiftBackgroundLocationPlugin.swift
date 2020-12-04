@@ -20,6 +20,9 @@ public class SwiftBackgroundLocationPlugin: NSObject, FlutterPlugin, CLLocationM
         SwiftBackgroundLocationPlugin.locationManager?.requestAlwaysAuthorization()
 
         SwiftBackgroundLocationPlugin.locationManager?.allowsBackgroundLocationUpdates = true
+        if #available(iOS 11.0, *) {
+            SwiftBackgroundLocationPlugin.locationManager?.showsBackgroundLocationIndicator = true;
+        }
         SwiftBackgroundLocationPlugin.locationManager?.pausesLocationUpdatesAutomatically = false
 
         SwiftBackgroundLocationPlugin.channel?.invokeMethod("location", arguments: "method")
@@ -47,7 +50,7 @@ public class SwiftBackgroundLocationPlugin: NSObject, FlutterPlugin, CLLocationM
             "longitude": locations.last!.coordinate.longitude,
             "accuracy": locations.last!.horizontalAccuracy,
             "bearing": locations.last!.course,
-            "time": locations.last!.timestamp.timeInvervalSince1970 * 1000
+            "time": locations.last!.timestamp.timeIntervalSince1970 * 1000
         ] as [String : Any]
 
         SwiftBackgroundLocationPlugin.channel?.invokeMethod("location", arguments: location)
