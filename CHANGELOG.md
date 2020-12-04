@@ -1,3 +1,38 @@
+## 0.2.2
+prevent setNotificationTitle form running in ios
+
+## 0.2.1
+Include swift version in podspec to avoid errors when the users don't
+
+## 0.2.0
+Allow changing notification title in Android
+
+## 0.1.3
+Update android plugin permissions
+Update README
+
+## 0.1.2
+
+Added showsBackgroundLocationIndicator to iOS fixing [#29](https://github.com/Almoullim/background_location/issues/30#issuecomment-668540916)
+Update permission handler to v5.0.1+1
+
+## 0.1.1
+
+Bug fixes
+
+## 0.1.0
+
+- `Location` class is now public and can imported
+- `Location` class now contains a `toMap()` that will return JSON compatible map
+
+## 0.0.11
+
+Bug fixes
+
+## 0.0.10
+
+WIP: Add timestamp from location
+
 ## 0.0.9+3
 
 Bug fixes
